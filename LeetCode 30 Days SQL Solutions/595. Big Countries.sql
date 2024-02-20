@@ -32,23 +32,15 @@
 -- +-------------+------------+---------+
 
 
--- MSSQL Solution:
+-- SQL Solution:
  
 SELECT NAME,POPULATION,AREA
 FROM WORLD
 WHERE AREA  >= 3000000 or POPULATION >= 25000000  
 
--- MySQL
-SELECT NAME,POPULATION,AREA
-FROM WORLD
-WHERE AREA  >= 3000000 or POPULATION >= 25000000
+-- Pandas Solution 
 
---ORACLE
-SELECT NAME,POPULATION,AREA
-FROM WORLD
-WHERE AREA  >= 3000000 or POPULATION >= 25000000
+import pandas as pd
 
--- PostgreSQL
-SELECT NAME,POPULATION,AREA
-FROM WORLD
-WHERE AREA  >= 3000000 or POPULATION >= 25000000
+def big_countries(world: pd.DataFrame) -> pd.DataFrame:
+    return  world.loc[(world.population >= 25000000) | (world.area >= 3000000),['name','population','area']]
