@@ -1,4 +1,5 @@
 Hello!!
 
-This repository is display of my Data Analysis Projects using SQL.
+This repository is a display of my Data Analysis Portfolio Projects
+
 
